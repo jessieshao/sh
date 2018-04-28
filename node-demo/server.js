@@ -32,11 +32,11 @@ var server = http.createServer(function(request, response){
     '</body></html>')
     response.end()
   }else if(path == '/style.css'){
-    response.setHeader('content - type','text/css; charset-utf-8')
+    response.setHeader('content-type','text/css; charset-utf-8')
     response.write('body{background-color :#ddd;} h1{color:red;}')
     response.end()
   }else if(path == '/main.js'){
-    response.setHeader('content - type','text/javascript; charset-utf-8')
+    response.setHeader('content-type','text/javascript; charset-utf-8')
     response.write('alert("这是js执行的")')
     response.end()
   }else{
