@@ -23,7 +23,7 @@ var server = http.createServer(function(request, response){
 
   console.log('HTTP路径为\n' + path)
   if (path == '/'){
-    response.setHeader('content-type','text/html; charset-utf-8')
+    response.setHeader('content-type','text/html; Unicode')
     response.write('<DOCTYPE>\n<html>' + 
     '<head><link rel="StyleSheet" href="/style.css">' +
     '</head><body>' + 
@@ -32,11 +32,11 @@ var server = http.createServer(function(request, response){
     '</body></html>')
     response.end()
   }else if(path == '/style.css'){
-    response.setHeader('content-type','text/css; charset-utf-8')
+    response.setHeader('content-type','text/css; Unicode')
     response.write('body{background-color :#ddd;} h1{color:red;}')
     response.end()
   }else if(path == '/main.js'){
-    response.setHeader('content-type','text/javascript; charset-utf-8')
+    response.setHeader('content-type','text/javascript; Unicode')
     response.write('alert("这是js执行的")')
     response.end()
   }else{
