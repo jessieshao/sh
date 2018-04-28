@@ -27,6 +27,7 @@ var server = http.createServer(function(request, response){
     response.write('<DOCTYPE>\n<html>' + 
     '<head><link rel="StyleSheet" href="/style.css">' +
     '</head><body>' + 
+    '<meta http-equiv="Content-Type" content="text/html; charset=utf-8">'+
     '<h1>你好</h1>' +
     '<script src="/main.js"></script>' +
     '</body></html>')
