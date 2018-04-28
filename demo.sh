@@ -1,6 +1,6 @@
-if [ -d $1 ]; then
+if [ -d $1 ]; then  
   echo 'error: dir exists'
-  exit
+  exit 
 else
   mkdir $1
   cd $1
