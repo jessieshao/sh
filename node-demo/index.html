@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+    <h5>账户余额：<span id = "amount">&&&amount&&&</span> </h5>
+    <button id="button">打钱</button>
+    <script>
+        button.addEventListener('click',(e)=>{
+            let script = document.createElement('script')
+            script.src = 'http://jack.com:8002/pay'
+            document.body.appendChild(script)
+            script.onload = function(e){
+                e.currentTarget.remove()
+            }
+            script.onerror = function(e){
+                e.currentTarget.remove()
+                alert('fail')
+            }
+        })
+    </script>
+</body>
+</html>
