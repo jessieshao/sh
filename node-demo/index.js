@@ -24,13 +24,17 @@ var server = http.createServer(function(request, response){
   if(path === '/'){
     var string = fs.readFileSync('./index.html','utf8')
     response.setHeader('Content-Type', 'text/html;charset=utf-8')
+    response.statusCode=200
     response.write(string)
+    response.end()
   }else if(path === '/pay'){
     var amount = fs.readFileSync('./db','utf8')
     var newAmount = amount - 1
     fs.writeFileSync('./db',newAmount)
     response.setHeader('Content-Type', 'application/javascript;charset=utf-8')
     response.write(`amount.innerText = amount.innerText - 1`)
+    response.statusCode=200
+    response.end()
   }
   else{
     response.statusCode = 404
