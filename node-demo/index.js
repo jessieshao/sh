@@ -3,6 +3,7 @@ var fs = require('fs')
 var url = require('url')
 var port = process.argv[2]
 
+
 if(!port){
   console.log('请指定端口号好不啦？\nnode server.js 8888 这样不会吗？')
   process.exit(1)
@@ -34,8 +35,10 @@ var server = http.createServer(function(request, response){
     var newAmount = amount - 1
     fs.writeFileSync('./db',newAmount)
     response.setHeader('Content-Type', 'application/javascript;charset=utf-8')
-    response.write(`${query.callback}.call(undefined,'success')`)
     response.statusCode=200
+    response.write(`
+    ${query.callback}.call(undefined,'success')
+    `)
     response.end()
   }
   else{

@@ -6,7 +6,8 @@
         let script = document.createElement('script')
         let functionName = 'jessie'+parseInt(Math.random()*10000,10)
         window[functionName] = function(result){
-            if(result == succese){
+            if(result === 'success'){
+                console.log('success')
                 amount.innerText = amount.innerText - 1
             }else{}
         }
@@ -17,7 +18,7 @@
             e.currentTarget.remove()
             delete window[functionName]
         }
-        script.onerror = function(e){
+        script.onerror = function(){
             e.currentTarget.remove()
             alert('fail')
             delete window[functionName]
