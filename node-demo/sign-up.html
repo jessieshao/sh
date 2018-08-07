@@ -61,13 +61,14 @@
                 hash[name] = value
             })
             console.log(hash)
-        })
-        $.post('sign-up',hash)
-            .then(()=>{
-            
-            },()=>{
+       
+            $.post('/sign-up',hash)
+                .then(()=>{
                 
-            })
+                },()=>{
+                
+                })
+        })
     </script>
 </body>
 </html>

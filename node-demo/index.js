@@ -1,6 +1,4 @@
-import { promises } from 'fs';
-import { resolve } from 'path';
-import { rejects } from 'assert';
+
 
 var http = require('http')
 var fs = require('fs')
@@ -42,7 +40,16 @@ var server = http.createServer(function(request, response){
     response.end()
   }else if(path === '/sign-up' && method === 'POST'){
     readBody(request).then((body)=>{
-      console.log(body)
+      let strings = body.split('&')
+      let hash = {}
+      strings.forEach((string) => {
+        let parts = string.split('=')
+        let key = parts[0]
+        let value = parts[1]
+        hash[key] = value
+      });
+      let {email,password,password_confirm} = hash
+      console.log(hash)
       response.statusCode=200
       response.end()
     })
