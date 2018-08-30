@@ -6,17 +6,15 @@
   <title>回文数判断</title>
 </head>
 <style>
-    .container{position: realtive;}
-    .wrapper{position: absolute;top: 30%;left: 40%; }
+    body{display: flex;justify-content: center;}
+    .container{margin-top: 150px;}
 </style>
 <body>
     <div class="container">
-        <div class="wrapper">
         <p>请输入整数</p>
         <input type="text" id="q">
         <input type="button" value="提交" onclick="getValue()">
         <p id="output"></p>
-        </div>
     </div>
 <script>
     function getValue(){
