@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>回文数判断</title>
+</head>
+<style>
+    .container{position: realtive;}
+    .wrapper{position: absolute;top: 30%;left: 40%; }
+</style>
+<body>
+    <div class="container">
+        <div class="wrapper">
+        <p>请输入整数</p>
+        <input type="text" id="q">
+        <input type="button" value="提交" onclick="getValue()">
+        <p id="output"></p>
+        </div>
+    </div>
+<script>
+    function getValue(){
+    let num2=[]
+    let num = document.getElementById("q").value
+    if(num === num.split("").reverse().join("")){
+      num2 = num.slice(0,`${(num.length+num.length%2)/2}`)
+      document.getElementById("output").innerText =num +  `是回文数，新数组为`  + num2 + `，长度为` + `${(num.length+num.length%2)/2}`
+    }else{
+      document.getElementById("output").innerText =num +  `不是回文数`
+    }
+}
+</script>
+</body>
+</html>
